@@ -6,7 +6,7 @@ class Coord {
     }
 }; 
 
-// Examples of positions of the 3 Raspberry 
+//Examples of positions of the 3 Raspberry 
 const coordR1 = new Coord(xAxis = 1.5, yAxis = 1.5);
 const coordR2 = new Coord(xAxis = -1.5, yAxis = -1.5);
 const coordR3 = new Coord(xAxis = 1.5, yAxis = -1.5); 
