@@ -6,21 +6,13 @@ import TWEEN from '@tweenjs/tween.js';
 import { Raycaster, Vector2 } from 'three';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import RaspberryPiMarker from "./RasspberryMarker"; 
 
 // Locally imports  
 import { distances } from "../utils/distances"; 
 import { computeIBeaconObjCoords } from "../utils/calculatePosition";
 import { Coord, coordR1, coordR2, coordR3 } from "../utils/Coords"; 
-
-function Annotation({ point }) {
-  return point ? (
-    <Html position={point}>
-      <svg height="34" width="34" transform="translate(-17 -17)" style={{ cursor: 'pointer' }}>
-        <circle cx="17" cy="17" r="16" stroke="white" strokeWidth="2" fill="rgba(0,0,0,0.66)" />
-      </svg>
-    </Html>
-  ) : null;
-}
+import Annotation from './Annotation';
 
 function Loader() {
   const { progress } = useProgress();
@@ -86,7 +78,10 @@ export default function App() {
         <Suspense fallback={<Loader />}>
           <Environment preset="city" background blur={0.75} />
           <Model />
-          <Annotation point={[point.x, point.y, point.z]} />
+          <Annotation point={[point.x, point.y, point.z]}/>
+          <RaspberryPiMarker position={[6, 0, 6]} />
+          <RaspberryPiMarker position={[-6, 0, 6]} />
+          <RaspberryPiMarker position={[-6, 0, -6]} />
           <TweenUpdater />
         </Suspense>
         <ClickHandler />
