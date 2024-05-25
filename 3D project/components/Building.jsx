@@ -79,9 +79,9 @@ export default function App() {
           <Environment preset="city" background blur={0.75} />
           <Model />
           <Annotation point={[point.x, point.y, point.z]}/>
-          <RaspberryPiMarker position={[6, 0, 6]} />
-          <RaspberryPiMarker position={[-6, 0, 6]} />
-          <RaspberryPiMarker position={[-6, 0, -6]} />
+          <RaspberryPiMarker position={[5.85, 0.25, 5.75]} />
+          <RaspberryPiMarker position={[-6.15, 0.25, 5.75]} />
+          <RaspberryPiMarker position={[-6.15, 0.25, -6.15]} />
           <TweenUpdater />
         </Suspense>
         <ClickHandler />
